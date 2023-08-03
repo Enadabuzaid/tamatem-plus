@@ -51,7 +51,7 @@ if you want Replace ```$(pwd)/../files and $(pwd)/../new_files_php``` with the a
 2. Build the Docker image:
 
     ```
-    docker build -t file-organizer-php .
+    docker build -t file-organizer-python .
     ```
    
 3. Run the Docker image:
