@@ -45,6 +45,22 @@ The directory structure is as follows:
    ```
 if you want Replace ```$(pwd)/../files and $(pwd)/../new_files_php``` with the absolute paths to the source and destination directories on your host machine if you are not running the command from the php directory.
 
+### Python
+1. Clone this repository and navigate into the `python` directory.
+
+2. Build the Docker image:
+
+    ```
+    docker build -t file-organizer-php .
+    ```
+   
+3. Run the Docker image:
+    ```
+    docker run --rm -v $(pwd)/../files:/source:ro -v $(pwd)/../new_files_python:/destination file-organizer-python 
+    ```
+    
+
+
 ## Setup Without Docker
 
 ### PHP
@@ -52,7 +68,16 @@ if you want Replace ```$(pwd)/../files and $(pwd)/../new_files_php``` with the a
 php file_organizer.php path/to/source/directory path/to/destination/directory
 ```
 
+### Python
+```
+python file_organizer.py path/to/source/directory path/to/destination/directory
+```
 
+or
+
+```
+python3 file_organizer.py path/to/source/directory path/to/destination/directory
+```
 
 ### Notes
 The Docker container mounts the source directory as read-only, which means the original files are not modified.
